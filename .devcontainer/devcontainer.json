@@ -1,0 +1,11 @@
+{
+    "name": "CrushDB",
+    "workspaceFolder": "/workspace",
+    "service": "vscode",
+    "dockerComposeFile": "./development-compose.yml",
+    "extensions": [
+        "ms-dotnettools.csharp",
+        "streetsidesoftware.code-spell-checker"
+    ],
+    "shutdownAction": "stopCompose"
+}

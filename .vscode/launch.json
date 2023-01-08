@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Graceful",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/CrushDB.Graceful/bin/Debug/net7.0/<>",
+            "args": [
+                "console-host"
+            ],
+            "cwd": "${workspaceFolder}/src/CrushDB.Graceful",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+    ]
+}
