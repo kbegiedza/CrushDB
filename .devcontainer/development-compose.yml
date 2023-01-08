@@ -2,6 +2,7 @@ version: "3.9"
 
 networks:
   development:
+    name: crushdb
     driver: bridge
 
 services:
