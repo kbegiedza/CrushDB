@@ -2,15 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run Graceful",
+            "name": "Run CrushDB",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/CrushDB.Graceful/bin/Debug/net7.0/<>",
-            "args": [
-                "console-host"
-            ],
-            "cwd": "${workspaceFolder}/src/CrushDB.Graceful",
+            "program": "${workspaceFolder}/src/CrushDB/bin/Debug/net7.0/CrushDB.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/CrushDB",
             "console": "internalConsole",
             "stopAtEntry": false
         },
