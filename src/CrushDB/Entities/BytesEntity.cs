@@ -6,7 +6,7 @@ namespace CrushDB.Entities
         {
             RowKey = rowKey;
             PartitionKey = partitionKey;
-            Bytes = new byte[size * 8];
+            Bytes = new byte[size * 4];
         }
 
         public byte[] Bytes { get; set; }
