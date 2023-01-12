@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AFD1DEC1-E22
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrushDB", "src\CrushDB\CrushDB.csproj", "{645F7FD2-ED3C-4FFB-AAE3-09FB4002F629}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9A2DEF6F-382C-4D6D-88CC-46D12AD678CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrushDB.Tests.Performance", "tests\CrushDB.Tests.Performance\CrushDB.Tests.Performance.csproj", "{BF7E86F4-1421-4C44-8993-AC64BEBB6956}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,13 @@ Global
 		{645F7FD2-ED3C-4FFB-AAE3-09FB4002F629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{645F7FD2-ED3C-4FFB-AAE3-09FB4002F629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{645F7FD2-ED3C-4FFB-AAE3-09FB4002F629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF7E86F4-1421-4C44-8993-AC64BEBB6956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF7E86F4-1421-4C44-8993-AC64BEBB6956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF7E86F4-1421-4C44-8993-AC64BEBB6956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF7E86F4-1421-4C44-8993-AC64BEBB6956}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{645F7FD2-ED3C-4FFB-AAE3-09FB4002F629} = {AFD1DEC1-E228-4DE1-AB50-D1025DF55980}
+		{BF7E86F4-1421-4C44-8993-AC64BEBB6956} = {9A2DEF6F-382C-4D6D-88CC-46D12AD678CC}
 	EndGlobalSection
 EndGlobal

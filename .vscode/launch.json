@@ -12,5 +12,19 @@
             "console": "internalConsole",
             "stopAtEntry": false
         },
+        {
+            "name": "Run CrushDB.Tests.Performance",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Release",
+            "program": "${workspaceFolder}/tests/CrushDB.Tests.Performance/bin/Release/net7.0/CrushDB.Tests.Performance.dll",
+            "args": [
+                "--filter",
+                "*"
+            ],
+            "cwd": "${workspaceFolder}/tests/CrushDB.Tests.Performance",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
     ]
 }
