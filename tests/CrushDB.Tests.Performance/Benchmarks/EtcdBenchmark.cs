@@ -1,3 +1,4 @@
+using System.Text.Json;
 using BenchmarkDotNet.Attributes;
 using dotnet_etcd;
 using Etcdserverpb;
@@ -14,6 +15,9 @@ namespace CrushDB.Tests.Performance.Benchmarks
             _client = new EtcdClient("http://etcd:2379,http://etcd:2380");
         }
 
+        [Params()]
+        public int ValueSize { get; set; }
+
         [GlobalSetup]
         public async Task SetupAsync()
         {
@@ -24,6 +28,12 @@ namespace CrushDB.Tests.Performance.Benchmarks
             };
 
             await _client.DeleteAsync(range);
+        }
+
+        [Benchmark]
+        public async Task SetAsync()
+        {
+            /* await _client.PutAsync(, JsonSerializer.Serialize) */
         }
     }
 }
