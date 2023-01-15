@@ -2,6 +2,8 @@
     "cSpell.words": [
         "crushdb",
         "dotnettools",
-        "Newtonsoft"
+        "Etcdserverpb",
+        "Newtonsoft",
+        "Protobuf"
     ]
 }

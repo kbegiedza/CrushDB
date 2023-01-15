@@ -20,7 +20,7 @@
             "program": "${workspaceFolder}/tests/CrushDB.Tests.Performance/bin/Release/net7.0/CrushDB.Tests.Performance.dll",
             "args": [
                 "--filter",
-                "*"
+                "*EtcdBenchmark*"
             ],
             "cwd": "${workspaceFolder}/tests/CrushDB.Tests.Performance",
             "console": "internalConsole",

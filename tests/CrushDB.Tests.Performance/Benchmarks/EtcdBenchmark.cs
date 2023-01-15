@@ -10,13 +10,20 @@ namespace CrushDB.Tests.Performance.Benchmarks
     {
         private readonly EtcdClient _client;
 
+        private string _value;
+
         public EtcdBenchmark()
         {
+            _value = string.Empty;
+
             _client = new EtcdClient("http://etcd:2379,http://etcd:2380");
         }
 
-        [Params()]
+        [Params(1024, 2048, 4096, 8192)]
         public int ValueSize { get; set; }
+
+        [Params(1, 10, 100, 1000)]
+        public int Insertions { get; set; }
 
         [GlobalSetup]
         public async Task SetupAsync()
@@ -28,12 +35,28 @@ namespace CrushDB.Tests.Performance.Benchmarks
             };
 
             await _client.DeleteAsync(range);
+
+            var bytes = CreateRandomBytes(ValueSize);
+
+            _value = JsonSerializer.Serialize(bytes);
         }
 
         [Benchmark]
         public async Task SetAsync()
         {
-            /* await _client.PutAsync(, JsonSerializer.Serialize) */
+            for (var i = 0; i < Insertions; ++i)
+            {
+                await _client.PutAsync(i.ToString(), _value);
+            }
+        }
+
+        private static byte[] CreateRandomBytes(int size)
+        {
+            var bytes = new byte[size];
+
+            Random.Shared.NextBytes(bytes);
+
+            return bytes;
         }
     }
 }
