@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿/*
+using System.Diagnostics;
 using System.Text.Json;
 using CrushDB.Entities;
 using dotnet_etcd;
@@ -28,3 +29,22 @@ var all = await client.GetAsync(rangeRequest);
 stopwatch.Stop();
 
 Console.WriteLine($"Get all: {stopwatch.Elapsed}");
+
+*/
+
+using Cassandra;
+using CrushDB.Entities;
+
+using var cluster = Cluster.Builder()
+                     .AddContactPoints("cassandra")
+                     .Build();
+
+using var session = await cluster.ConnectAsync();
+
+session.UserDefinedTypes.Define(UdtMap.For<BytesEntity>());
+
+await session.ExecuteAsync(new SimpleStatement("CREATE KEYSPACE IF NOT EXISTS crushdb WITH replication = { 'class': 'SimpleStrategy', 'replication_factor': '1' }"));
+await session.ExecuteAsync(new SimpleStatement("USE examples"));
+await session.ExecuteAsync(new SimpleStatement("CREATE TABLE IF NOT EXISTS table_bytes_entity(partition_key text, row_key text, b, PRIMARY KEY(id))"));
+
+var res = await session.ExecuteAsync();

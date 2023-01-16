@@ -2,6 +2,10 @@ namespace CrushDB.Entities
 {
     public class BytesEntity
     {
+        public BytesEntity()
+        {
+        }
+
         public BytesEntity(string partitionKey, string rowKey, int size)
         {
             RowKey = rowKey;

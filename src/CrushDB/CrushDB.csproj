@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="dotnet-etcd" Version="6.0.1" />
+    <PackageReference Include="CassandraCSharpDriver" Version="3.19.0" />
   </ItemGroup>
 
 </Project>
