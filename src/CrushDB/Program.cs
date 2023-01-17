@@ -46,5 +46,3 @@ session.UserDefinedTypes.Define(UdtMap.For<BytesEntity>());
 await session.ExecuteAsync(new SimpleStatement("CREATE KEYSPACE IF NOT EXISTS crushdb WITH replication = { 'class': 'SimpleStrategy', 'replication_factor': '1' }"));
 await session.ExecuteAsync(new SimpleStatement("USE examples"));
 await session.ExecuteAsync(new SimpleStatement("CREATE TABLE IF NOT EXISTS table_bytes_entity(partition_key text, row_key text, b, PRIMARY KEY(id))"));
-
-var res = await session.ExecuteAsync();
