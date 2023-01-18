@@ -1,4 +1,4 @@
-namespace CrushDB.Entities
+namespace CrushDB.Tests.Performance.Entities
 {
     public class BytesEntity
     {
